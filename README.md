@@ -80,13 +80,3 @@ This portfolio can be easily deployed to Vercel:
 1. Push your code to a GitHub repository
 2. Import the project in Vercel
 3. Deploy
-
-## License
-
-This project is licensed under the MIT License.
-
-## Acknowledgments
-
-- UI components by [shadcn/ui](https://ui.shadcn.com/)
-- Icons by [Lucide](https://lucide.dev/)
-- Animations by [Framer Motion](https://www.framer.com/motion/) 
