@@ -26,6 +26,7 @@ import AboutMe from "@/components/about-me"
 import Loading from "@/components/loading"
 import InteractiveShapes from "@/components/InteractiveShapes"
 import AnimatedBoxes from "@/components/AnimatedBoxes"
+import Image from "next/image"
 
 // Add type interfaces at the top of the file, right after the imports
 interface ServiceCardProps {
@@ -39,6 +40,14 @@ interface ProjectCardProps {
   description: string;
   tags: string[];
   image?: string;
+}
+
+interface BookCardProps {
+  title: string;
+  author: string;
+  description: string;
+  imageSrc: string;
+  takeaway: string;
 }
 
 export default function Home() {
@@ -207,6 +216,185 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Interests Section */}
+      <section id="interests" className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="container px-4 mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
+                My Interests & Hobbies
+              </span>
+              <span className="ml-2 text-white">🎯</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto text-center mb-12">
+              Beyond the data and code, here's what keeps me balanced and inspired.
+            </p>
+
+            {/* Weightlifting Section */}
+            <div className="mb-20">
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
+                  Olympic Weightlifting
+                </span>
+                <span className="ml-2 text-white">🏋️‍♂️</span>
+              </h3>
+              <p className="text-gray-300 max-w-3xl mx-auto text-center mb-12">
+                I'm passionate about Olympic weightlifting. It's not just a physical challenge but a mental one - requiring focus, dedication, and technical precision.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <motion.div 
+                  className="rounded-xl overflow-hidden h-[350px] relative bg-gray-800"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image 
+                    src="/weightlifting.jpg" 
+                    alt="Olympic weightlifting snatch" 
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
+                <motion.div 
+                  className="rounded-xl overflow-hidden h-[350px] relative bg-gray-800"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image 
+                    src="/weights-3.jpg" 
+                    alt="Olympic weightlifting jerk" 
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
+                <motion.div 
+                  className="rounded-xl overflow-hidden h-[350px] relative bg-gray-800"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image 
+                    src="/weights-4.jpg" 
+                    alt="Olympic weightlifting session" 
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
+              </div>
+
+              <div className="mt-8 text-center">
+                <p className="text-lg text-gray-300 mb-4">
+                  What I love about weightlifting is the continuous pursuit of technical mastery and physical development. The sport combines strength, speed, flexibility, and precision in a unique way.
+                </p>
+              </div>
+            </div>
+
+            {/* Reading Section */}
+            <div className="mb-20">
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
+                  Books That Shaped My Thinking
+                </span>
+                <span className="ml-2 text-white">📚</span>
+              </h3>
+              <p className="text-gray-300 max-w-3xl mx-auto text-center mb-12">
+                Reading is my way of exploring new ideas and perspectives. Here are some books that have influenced me. Here is a combination of my recent reads as well as my most impactful reads.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <BookCard 
+                  title="The Power of Now" 
+                  author="Eckhart Tolle" 
+                  description="A guide to spiritual enlightenment focused on living in the present moment."
+                  imageSrc="/book-power-of-now.jpg"
+                  takeaway="This book taught me to appreciate the present moment and how mindfulness can reduce stress and anxiety."
+                />
+                <BookCard 
+                  title="Think and Grow Rich" 
+                  author="Napoleon Hill" 
+                  description="Classic self-help book exploring the psychological power of thought and personal belief."
+                  imageSrc="/book-think-and-growrich.jpg"
+                  takeaway="Hill's principles of persistence and positive thinking have directly influenced my approach to long-term goals."
+                />
+                <BookCard 
+                  title="The Intelligent Investor" 
+                  author="Benjamin Graham" 
+                  description="The definitive book on value investing, endorsed by Warren Buffett."
+                  imageSrc="/book-intelligent-investor.jpg"
+                  takeaway="Graham's approach to value investing has formed the foundation of my investment philosophy and risk management."
+                />
+                <BookCard 
+                  title="Attached" 
+                  author="Amir Levine & Rachel Heller" 
+                  description="Explores how attachment theory can help form better relationships."
+                  imageSrc="/book-attached.png"
+                  takeaway="Understanding attachment styles has given me valuable insights into relationship dynamics and communication patterns."
+                />
+                <BookCard 
+                  title="Nonviolent Communication" 
+                  author="Marshall B. Rosenberg" 
+                  description="A language of life and approach to communicating with empathy."
+                  imageSrc="/non-violent-communication.jpg"
+                  takeaway="Rosenberg's framework has transformed how I express needs and listen empathetically in both personal and professional settings."
+                />
+                <BookCard 
+                  title="The Alchemist" 
+                  author="Paulo Coelho"
+                  description="A philosophical novel about following your dreams and listening to your heart."
+                  imageSrc="/the-alchemist.jpg"
+                  takeaway="This story reinforced my belief in pursuing personal goals while staying attentive to the journey's lessons along the way."
+                />
+              </div>
+            </div>
+            
+            {/* Food Section */}
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
+                  Culinary Adventures
+                </span>
+                <span className="ml-2 text-white">🍽️</span>
+              </h3>
+              <p className="text-gray-300 max-w-3xl mx-auto text-center mb-12">
+                I enjoy both cooking and exploring new foods. Here's a glimpse of my culinary interests.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
+                <motion.div 
+                  className="rounded-xl overflow-hidden h-[350px] relative bg-gray-800"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image 
+                    src="/cinnamon-buns.jpg" 
+                    alt="Homemade cinnamon rolls" 
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
+                <div className="space-y-4">
+                  <h3 className="text-xl font-bold text-purple-400">Baking & Cooking</h3>
+                  <p className="text-gray-300">
+                    From homemade cinnamon rolls to exploring local cafes, I enjoy the creative and scientific aspects of cooking and baking. It's a perfect balance to my technical work - combining precision with creativity.
+                  </p>
+                  <p className="text-gray-300">
+                    I'm always on the lookout for new recipes to try or local food spots that offer unique culinary experiences.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-black">
         <div className="container px-4 mx-auto">
@@ -335,6 +523,30 @@ function ContactEmail() {
         owenfisher46@gmail.com
       </a>
     </div>
+  )
+}
+
+function BookCard({ title, author, description, imageSrc, takeaway }: BookCardProps) {
+  return (
+    <motion.div 
+      className="p-4 rounded-xl bg-gray-900 border border-gray-800 hover:border-purple-500 transition-all duration-300 flex flex-col h-full"
+      whileHover={{ scale: 1.03 }}
+      transition={{ duration: 0.3 }}
+    >
+      <div className="w-full h-[200px] relative mb-4 overflow-hidden rounded-xl bg-gray-800">
+        <Image 
+          src={imageSrc} 
+          alt={title} 
+          fill
+          className="object-contain"
+          priority
+        />
+      </div>
+      <h3 className="text-lg font-bold text-white mb-1">{title}</h3>
+      <p className="text-purple-400 text-sm mb-3">by {author}</p>
+      <p className="text-gray-400 text-sm mb-3">{description}</p>
+      <p className="text-gray-300 text-sm italic border-t border-gray-800 pt-3 mt-auto">{takeaway}</p>
+    </motion.div>
   )
 }
 
