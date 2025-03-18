@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Github, Linkedin } from "lucide-react"
+import { Menu, X, Github, Linkedin, Music } from "lucide-react"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -101,6 +101,18 @@ export default function Navbar() {
           >
             <Linkedin size={24} />
           </motion.a>
+          <motion.a
+            href="https://open.spotify.com/user/obro798"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-white transition-colors duration-300"
+            aria-label="Spotify"
+            variants={iconVariants}
+            initial="initial"
+            whileHover="hover"
+          >
+            <Music size={24} />
+          </motion.a>
         </div>
 
         {/* Mobile Navigation Toggle */}
@@ -128,6 +140,18 @@ export default function Navbar() {
             whileHover="hover"
           >
             <Linkedin size={24} />
+          </motion.a>
+          <motion.a
+            href="https://open.spotify.com/user/obro798"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-white transition-colors duration-300"
+            aria-label="Spotify"
+            variants={iconVariants}
+            initial="initial"
+            whileHover="hover"
+          >
+            <Music size={24} />
           </motion.a>
           <button className="text-white focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
