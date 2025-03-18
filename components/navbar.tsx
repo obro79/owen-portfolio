@@ -5,7 +5,8 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Github, Linkedin, Music } from "lucide-react"
+import { Menu, X, Github, Linkedin } from "lucide-react"
+import SpotifyIcon from "./spotify-icon"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -111,7 +112,7 @@ export default function Navbar() {
             initial="initial"
             whileHover="hover"
           >
-            <Music size={24} />
+            <SpotifyIcon size={24} />
           </motion.a>
         </div>
 
@@ -151,7 +152,7 @@ export default function Navbar() {
             initial="initial"
             whileHover="hover"
           >
-            <Music size={24} />
+            <SpotifyIcon size={24} />
           </motion.a>
           <button className="text-white focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
