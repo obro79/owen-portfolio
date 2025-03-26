@@ -27,6 +27,7 @@ import Loading from "@/components/loading"
 import InteractiveShapes from "@/components/InteractiveShapes"
 import AnimatedBoxes from "@/components/AnimatedBoxes"
 import Image from "next/image"
+import Link from "next/link"
 
 // Add type interfaces at the top of the file, right after the imports
 interface ServiceCardProps {
@@ -351,6 +352,17 @@ export default function Home() {
                   imageSrc="/the-alchemist.jpg"
                   takeaway="This story reinforced my belief in pursuing personal goals while staying attentive to the journey's lessons along the way."
                 />
+              </div>
+
+              <div className="mt-8 text-center">
+                <p className="text-lg text-gray-300 mb-4">
+                  These books span a range of topics from personal development to financial literacy.
+                </p>
+                <Link href="/interests">
+                  <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+                    View More Books & Videos
+                  </Button>
+                </Link>
               </div>
             </div>
             
